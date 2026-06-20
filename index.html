@@ -84,11 +84,22 @@
   /* ── HERO ── */
   #home {
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(13,31,60,0.85) 0%, rgba(26,58,107,0.8) 55%, rgba(26,84,153,0.8) 100%), url('cover%20photo.jpg') center/cover no-repeat;
+    background: var(--navy);
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center;
     padding: 100px 5% 60px;
     position: relative; overflow: hidden;
+  }
+  #home::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(13,31,60,0.85) 0%, rgba(26,58,107,0.8) 55%, rgba(26,84,153,0.8) 100%), url('cover%20photo.jpg') center/cover no-repeat;
+    z-index: 0;
+  }
+  .hero {
+    position: relative;
+    z-index: 1;
+    width: 100%;
   }
   .hero-cover-mobile {
     display: none;
@@ -500,19 +511,17 @@
 
   /* ── RESPONSIVE OVERRIDES (MOBILE/TABLET) ── */
   @media (max-width: 768px) {
-    .hero-cover-mobile {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(212,175,55,.4);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    #home::before {
+      background: 
+        linear-gradient(135deg, rgba(13,31,60,0.9) 0%, rgba(26,58,107,0.9) 100%),
+        url('cover%20photo.jpg') center/contain no-repeat,
+        url('cover%20photo.jpg') center/cover no-repeat;
+      filter: blur(6px);
+      transform: scale(1.05);
     }
     #home {
-      background: linear-gradient(135deg, rgba(13,31,60,0.98) 0%, rgba(26,58,107,0.98) 100%);
       padding: 96px 5% 40px;
-      min-height: auto;
+      min-height: 100vh;
     }
     .leader-grid, .activities-grid {
       display: flex;
@@ -612,7 +621,6 @@
   <div class="hero fade-in visible">
     <!-- Changed: badge now clearly identifies USA as a student-run organisation, not UNIMA itself -->
     <div class="hero-badge">🎓 A Student Organisation at UNIMA</div>
-    <img src="cover%20photo.jpg" alt="UNIMA USA Cover Photo" class="hero-cover-mobile">
     <h1>United Students<br><span>Association</span></h1>
     <p class="hero-tagline">"Empowering Students, Building Futures"</p>
     <!-- Changed: copy now makes clear this is students organising themselves, not the university -->
