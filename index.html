@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UNIMA United Students Association (USA) – The official digital presence of UNIMA USA, championing student welfare, leadership, and community impact. A student organisation for students.">
+<meta name="keywords" content="UNIMA, United Students Association, USA, University of Malawi, student organisation, student welfare, leadership, Malawi">
+<meta property="og:title" content="UNIMA United Students Association">
+<meta property="og:description" content="A student organisation run by students, for students, at the University of Malawi.">
+<title>UNIMA United Students Association (USA)</title>
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1A3A6B;
+    --blue-mid: #1e4a8a;
+    --blue-light: #EEF3FB;
+    --navy: #0D1F3C;
+    --gold: #D4AF37;
+    --gold-light: #f0d060;
+    --gold-pale: #FBF6E2;
+    --white: #FFFFFF;
+    --gray: #6B7280;
+    --gray-light: #F3F4F6;
+    --text: #1a1a2e;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(13,31,60,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+    border-bottom: 2px solid var(--gold);
+    transition: background .3s;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo .crest {
+    width: 44px; height: 44px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 800;
+    color: var(--navy);
+    flex-shrink: 0;
+  }
+  .nav-logo .org-name { line-height: 1.1; }
+  .nav-logo .org-name strong { display: block; color: var(--white); font-size: 14px; font-weight: 700; letter-spacing: .5px; }
+  .nav-logo .org-name span { display: block; color: var(--gold); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-links a {
+    color: rgba(255,255,255,.8);
+    text-decoration: none; font-size: 13px; font-weight: 500;
+    padding: 6px 12px; border-radius: 6px;
+    transition: color .2s, background .2s;
+  }
+  .nav-links a:hover { color: var(--gold); background: rgba(212,175,55,.1); }
+  .nav-links .fb-link {
+    background: #1877F2; color: white; padding: 6px 14px;
+    border-radius: 6px; font-size: 12px; font-weight: 600;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .nav-links .fb-link:hover { background: #0d5ec9; color: white; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: .3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: var(--navy); padding: 20px 5%; z-index: 999;
+    border-bottom: 2px solid var(--gold);
+    flex-direction: column; gap: 4px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 14px; padding: 10px 12px; border-radius: 8px; font-weight: 500; }
+  .mobile-menu a:hover { background: rgba(212,175,55,.12); color: var(--gold); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(13,31,60,0.85) 0%, rgba(26,58,107,0.8) 55%, rgba(26,84,153,0.8) 100%), url('cover photo.jpg') center/cover no-repeat;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-pattern {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(212,175,55,.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(212,175,55,.06) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4);
+    color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    color: var(--white); line-height: 1.1; margin-bottom: 10px;
+    letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: clamp(.95rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,.7); max-width: 640px; margin: 0 auto 14px;
+    line-height: 1.7; font-weight: 300;
+  }
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--gold); font-style: italic;
+    margin-bottom: 36px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px; border-radius: 8px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    cursor: pointer; border: none;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,.5); color: white; }
+  .hero-stats {
+    display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
+    margin-top: 64px; padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .stat { text-align: center; }
+  .stat strong { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold); }
+  .stat small { color: rgba(255,255,255,.6); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 5%; }
+  .section-label {
+    display: inline-block;
+    background: var(--gold-pale); color: var(--blue);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 5px 14px; border-radius: 100px;
+    border: 1px solid rgba(212,175,55,.3);
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+    color: var(--navy); margin-bottom: 12px; line-height: 1.15;
+  }
+  .section-title span { color: var(--gold); }
+  .section-desc { color: var(--gray); font-size: 1rem; max-width: 560px; line-height: 1.75; }
+  .gold-rule { width: 48px; height: 3px; background: var(--gold); border-radius: 3px; margin: 18px 0 36px; }
+  .center { text-align: center; }
+  .center .gold-rule { margin-left: auto; margin-right: auto; }
+  .center .section-desc { margin: 0 auto; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--blue-light); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .about-visual {
+    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+    border-radius: 20px; padding: 48px 36px;
+    display: flex; flex-direction: column; gap: 24px;
+    position: relative; overflow: hidden;
+  }
+  .about-visual::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(212,175,55,.12); border-radius: 50%;
+  }
+  .value-item { display: flex; gap: 14px; align-items: flex-start; }
+  .value-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: rgba(212,175,55,.2); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .value-item h4 { color: var(--gold); font-size: 14px; font-weight: 700; margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+  .value-item p { color: rgba(255,255,255,0.95); font-size: 13px; line-height: 1.6; }
+  .about-text { display: flex; flex-direction: column; gap: 18px; }
+  .about-text p { color: var(--text); font-size: 0.92rem; line-height: 1.7; font-weight: 400; }
+  .about-subtitle { color: var(--navy); font-size: 0.98rem; margin-top: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .objectives-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+  .objectives-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.9rem; color: var(--text); line-height: 1.6; font-weight: 400;
+  }
+  .objectives-list li::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0; margin-top: 7px;
+  }
+
+  /* ── LEADERSHIP ── */
+  #leadership { background: var(--white); }
+  .leader-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px; margin-top: 20px; }
+  .leader-card {
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .leader-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(26,58,107,.12); border-color: var(--gold); }
+  .leader-avatar {
+    width: 100%; aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--blue-light), #d0def5);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; color: var(--blue);
+    position: relative;
+  }
+  .leader-avatar .position-badge {
+    position: absolute; bottom: 10px; left: 10px;
+    background: var(--gold); color: var(--navy);
+    font-size: 9px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+  }
+  .leader-info { padding: 18px 18px 20px; }
+  .leader-name { font-size: 1.05rem; color: var(--navy); margin-bottom: 2px; }
+  .leader-role { font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+  .leader-desc { font-size: .82rem; color: var(--gray); line-height: 1.65; }
+
+  /* ── ACTIVITIES ── */
+  #activities { background: var(--blue-light); }
+  .activities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 20px; }
+  .activity-card {
+    background: var(--white); border-radius: 16px; padding: 0; overflow: hidden; display: flex; flex-direction: column;
+    border: 1px solid #e5e7eb;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .activity-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,58,107,.1); }
+  .activity-img {
+    height: 160px; width: 100%;
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; color: white;
+  }
+  .activity-content { padding: 24px; }
+  .activity-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .activity-card p { font-size: .86rem; color: var(--gray); line-height: 1.65; }
+
+  /* ── GALLERY ── */
+  #gallery { background: var(--navy); padding: 90px 0; overflow: hidden; }
+  #gallery .center { padding: 0 5%; }
+  #gallery .section-title { color: white; }
+  #gallery .section-desc { color: rgba(255,255,255,.6); }
+  #gallery .section-label { background: rgba(212,175,55,.15); color: var(--gold); border-color: rgba(212,175,55,.3); }
+  
+  @keyframes scrollGallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-280px * 7 - 24px * 7)); }
+  }
+  .gallery-track {
+    display: flex; gap: 24px; margin-top: 48px;
+    width: max-content;
+    animation: scrollGallery 35s linear infinite;
+    padding-left: 5vw;
+  }
+  .gallery-track:hover { animation-play-state: paused; }
+  
+  .g-item {
+    width: 280px; height: 340px;
+    border-radius: 18px; overflow: hidden;
+    position: relative; cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+  }
+  .g-item .g-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .g-item:hover .g-bg { transform: scale(1.1); }
+  
+  .g-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,31,60,.9) 0%, transparent 50%);
+    display: flex; align-items: flex-end; padding: 24px;
+    opacity: 0; transition: opacity 0.4s ease;
+  }
+  .g-item:hover .g-overlay { opacity: 1; }
+  .g-overlay span { color: white; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transform: translateY(10px); transition: transform 0.4s ease; }
+  .g-item:hover .g-overlay span { transform: translateY(0); }
+
+  /* ── NEWS ── */
+  #news { background: var(--gray-light); }
+  .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; margin-top: 20px; }
+  .news-card {
+    background: white; border-radius: 14px; overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .news-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,.1); }
+  .news-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+  }
+  .news-img.blue { background: linear-gradient(135deg, var(--blue), #2a6db5); }
+  .news-img.gold { background: linear-gradient(135deg, #b8860b, var(--gold)); }
+  .news-img.navy { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+  .news-body { padding: 22px 20px 24px; }
+  .news-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+  .news-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 8px; line-height: 1.4; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .news-card p { font-size: .84rem; color: var(--gray); line-height: 1.65; margin-bottom: 14px; }
+  .news-date { font-size: 11px; color: #9CA3AF; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .contact-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 22px; background: var(--blue-light); border-radius: 14px;
+    border: 1px solid rgba(26,58,107,.1);
+  }
+  .contact-item-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    border-radius: 12px; background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .contact-item h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 5px; font-family: 'Inter', sans-serif; }
+  .contact-item a, .contact-item p { font-size: .9rem; color: var(--blue); text-decoration: none; line-height: 1.6; }
+  .contact-item a:hover { color: var(--gold); }
+  .wa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .wa-btn {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px; border-radius: 10px;
+    background: #25D366; color: white;
+    text-decoration: none; font-size: 12px; font-weight: 600;
+    transition: background .2s, transform .15s;
+  }
+  .wa-btn:hover { background: #128C7E; transform: scale(1.02); }
+  .wa-btn .wa-icon { font-size: 18px; }
+  .wa-btn .wa-text strong { display: block; font-size: 12px; }
+  .wa-btn .wa-text small { display: block; font-size: 10px; opacity: .85; font-weight: 400; }
+  .contact-join {
+    background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+    border-radius: 20px; padding: 40px 36px;
+  }
+  .contact-join h3 { color: white; font-size: 1.5rem; margin-bottom: 10px; }
+  .contact-join p { color: rgba(255,255,255,.75); font-size: .93rem; line-height: 1.75; margin-bottom: 24px; }
+  .contact-join a.btn-gold { display: inline-flex; }
+  .fb-widget {
+    margin-top: 24px; padding: 20px;
+    background: rgba(255,255,255,.08); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.15);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .fb-widget .fb-icon {
+    width: 46px; height: 46px; background: #1877F2; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 900; color: white; flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+  }
+  .fb-widget h4 { color: white; font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 4px; }
+  .fb-widget p { color: rgba(255,255,255,.65); font-size: 12px; margin-bottom: 0; }
+  .fb-widget a { color: #8fc9ff; font-size: 12px; font-weight: 600; text-decoration: none; }
+  .fb-widget a:hover { color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 56px 5% 28px;
+    border-top: 3px solid var(--gold);
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .footer-brand .crest-footer {
+    width: 52px; height: 52px; background: var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800;
+    color: var(--navy); margin-bottom: 14px;
+  }
+  .footer-brand h3 { color: white; font-size: 1rem; margin-bottom: 6px; }
+  .footer-brand p { color: rgba(255,255,255,.5); font-size: .84rem; line-height: 1.7; max-width: 280px; }
+  .footer-brand .social-links { display: flex; gap: 10px; margin-top: 16px; }
+  .footer-brand .social-links a {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+    font-size: 14px; font-weight: 800; text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .footer-brand .social-links a:hover { background: var(--gold); color: var(--navy); }
+  .footer-col h4 { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; font-family: 'Inter', sans-serif; }
+  .footer-col a { display: block; color: rgba(255,255,255,.55); font-size: .86rem; text-decoration: none; margin-bottom: 10px; transition: color .2s; }
+  .footer-col a:hover { color: white; }
+  .footer-col address { font-style: normal; color: rgba(255,255,255,.55); font-size: .84rem; line-height: 1.8; }
+  .footer-col address a { display: inline; color: #8fc9ff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { color: rgba(255,255,255,.4); font-size: 12px; }
+  .footer-bottom span { color: var(--gold); }
+
+  /* ── DARK MODE ── */
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f172a; color: #e2e8f0; }
+    #about, #activities { background: #0d1f3c; }
+    .about-text p, .objectives-list li { color: #cbd5e1; }
+    .about-subtitle { color: var(--gold); }
+    .section-title { color: var(--white); }
+    .section-desc { color: rgba(255,255,255,0.7); }
+    .activity-card, .leader-card, .news-card { background: #1e2a3b; border-color: #2d3f55; }
+    .activity-card h3, .leader-name, .news-card h3 { color: #e2e8f0; }
+    .contact-join { background: linear-gradient(135deg, #0f2847, #1e4a8a); }
+    #news { background: #0d1f3c; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { gap: 24px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .wa-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="crest"><img src="logo.jpg" alt="USA Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;"></div>
+    <div class="org-name">
+      <strong>UNIMA USA</strong>
+      <span>United Students Association</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#activities">Activities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener" class="fb-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#leadership" onclick="closeMobile()">Leadership</a>
+  <a href="#activities" onclick="closeMobile()">Activities</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#news" onclick="closeMobile()">News</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener">📘 Facebook Page</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero fade-in visible">
+    <!-- Changed: badge now clearly identifies USA as a student-run organisation, not UNIMA itself -->
+    <div class="hero-badge">🎓 A Student Organisation at UNIMA</div>
+    <h1>United Students<br><span>Association</span></h1>
+    <p class="hero-tagline">"Empowering Students, Building Futures"</p>
+    <!-- Changed: copy now makes clear this is students organising themselves, not the university -->
+    <p class="hero-sub">We are a student-run organisation founded by UNIMA students, for UNIMA students — dedicated to welfare, academic excellence, leadership development, and community impact.</p>
+    <div class="hero-btns">
+      <a href="#about" class="btn btn-gold">Discover USA ↓</a>
+      <a href="#contact" class="btn btn-outline">Join Us Today</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>50+</strong><small>Active Members</small></div>
+      <div class="stat"><strong>12+</strong><small>Programs & Activities</small></div>
+      <div class="stat"><strong>10</strong><small>Student Leaders</small></div>
+      <div class="stat"><strong>∞</strong><small>Opportunities</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid fade-in">
+    <div class="about-visual">
+      <div class="value-item">
+        <div class="value-icon">🌟</div>
+        <div>
+          <h4>Our Vision</h4>
+          <!-- Changed: "graduates" → "student leaders" — we are the students, not the institution producing graduates -->
+          <p>To be the leading student-run organisation that transforms lives, fosters excellence, and builds a generation of confident, empowered student leaders.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🎯</div>
+        <div>
+          <h4>Our Mission</h4>
+          <p>To promote student welfare, academic achievement, leadership, entertainment, and community service — organised by students, owned by students, and run in the interest of every student at UNIMA.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">💎</div>
+        <div>
+          <h4>Core Values</h4>
+          <p>Integrity, Excellence, Inclusion, Leadership, Transparency, and Community Service guide everything we do as a student organisation.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div>
+          <h4>Student Unity</h4>
+          <!-- Changed: makes it clear we are the students, speaking to and about our own community -->
+          <p>We believe every student at UNIMA deserves a voice, a community, and a platform to grow. USA exists because students decided to make that happen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">About USA</div>
+      <h2 class="section-title">Who We <span>Are</span></h2>
+      <div class="gold-rule"></div>
+      <!-- Changed: completely rewritten to centre students as the founders and owners of the org, not UNIMA -->
+      <p>The UNIMA United Students Association (USA) is a student-led and student-run organisation founded by students of the University of Malawi. We are not a department of UNIMA — we are students who came together to create the community, support systems, and opportunities that we wanted to see on campus.</p>
+      <p>USA is our organisation. Our executive team is made up of your fellow students. Our programs are designed by students, driven by students, and built around what students actually need. Whether you are a first-year finding your feet or a final-year preparing for life beyond campus, USA is your home.</p>
+      <h4 class="about-subtitle">What We Stand For</h4>
+      <ul class="objectives-list">
+        <!-- Changed: objectives reframed from institutional goals to what students do for each other -->
+        <li>Looking out for each other — promoting and protecting the welfare of every student at UNIMA</li>
+        <li>Helping each other succeed — peer-led academic support and tutoring programs</li>
+        <li>Growing together — leadership skills, entrepreneurship, and personal development</li>
+        <li>Giving back — community outreach, donations, and social impact initiatives beyond campus</li>
+        <li>Having fun — creating spaces for entertainment, socialising, and cultural exchange</li>
+        <li>Building bridges — partnerships with NGOs, institutions, and community organisations</li>
+        <li>Speaking up — advocating for student rights and transparent governance at UNIMA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="center fade-in">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Your Student <span>Leaders</span></h2>
+    <div class="gold-rule"></div>
+    <!-- Changed: "individuals who lead" → emphasise these are fellow students elected by students -->
+    <p class="section-desc">These are your fellow students — elected by the membership to lead USA with passion, accountability, and dedication to every student at UNIMA.</p>
+  </div>
+  <div class="leader-grid fade-in" style="margin-top:48px;">
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('president.jpg') center/cover no-repeat;">
+        <div class="position-badge">President</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Phwiza Transfore</h3>
+        <div class="leader-role">President</div>
+        <!-- Changed: "representing students at all institutional levels" now clearer — he represents students TO the institution -->
+        <p class="leader-desc">Elected by USA members to lead the organisation, Phwiza sets our strategic direction, represents students' interests to university management, and ensures everything USA does stays true to its mission of serving students.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('vice president.jpg') center/cover no-repeat;">
+        <div class="position-badge">Vice President</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Fyabupe Mkumbwa</h3>
+        <div class="leader-role">Vice President</div>
+        <p class="leader-desc">Supports the President in leading our student organisation, coordinates the executive team, steps in as Acting President when required, and drives collaboration across all USA committees.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('general secretary.jpg') center/cover no-repeat;">
+        <div class="position-badge">General Secretary</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Berlin Mheya</h3>
+        <div class="leader-role">General Secretary</div>
+        <p class="leader-desc">Handles all official communications, maintains our organisational records, coordinates meetings, and keeps the administrative side of USA running smoothly so our programs can focus on serving students.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('mistress of events.jpg') center/cover no-repeat;">
+        <div class="position-badge">Mistress of Events</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Belise Shimo</h3>
+        <div class="leader-role">Mistress of Events</div>
+        <p class="leader-desc">The creative force behind our student events — Belise plans and executes every gathering, ensuring each one is an experience students remember and look forward to.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background:linear-gradient(135deg,#c9a227,#f0d060);">
+        AH
+        <div class="position-badge">Master of Events</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Adrien Hauya</h3>
+        <div class="leader-role">Master of Events</div>
+        <p class="leader-desc">Co-leads all event planning and management, bringing energy and creativity to our student programs and ensuring every USA event leaves a lasting impression on members.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('mistress of records.jpg') center/cover no-repeat;">
+        <div class="position-badge">Mistress of Records</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Eveless Zikagwa</h3>
+        <div class="leader-role">Mistress of Records</div>
+        <p class="leader-desc">Maintains accurate records of all USA activities, decisions, and membership registers — keeping our student organisation's history and institutional memory intact for future generations of members.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('mistress of finance.jpg') center/cover no-repeat;">
+        <div class="position-badge">Mistress of Finance</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Judith Sande</h3>
+        <div class="leader-role">Mistress of Finance</div>
+        <!-- Changed: explicitly student funds managed transparently for student benefit -->
+        <p class="leader-desc">Manages our student organisation's finances with full transparency and accountability — ensuring every kwacha collected from members is spent on programs that genuinely benefit the student body.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background:linear-gradient(135deg,#1e4a8a,#5090d0);">
+        KM
+        <div class="position-badge">Master of Welfare</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Kingsley Misokwe</h3>
+        <div class="leader-role">Master of Welfare</div>
+        <!-- Changed: makes clear his role is student-to-student welfare advocacy -->
+        <p class="leader-desc">Our point person for student wellbeing. Kingsley runs welfare programs, connects students in need to support, and advocates on behalf of students for better campus conditions — student to student.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('jonathan mwambe.jpg') center/cover no-repeat;">
+        <div class="position-badge">Board Member</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Janathan Mwambe</h3>
+        <div class="leader-role">Board Member</div>
+        <p class="leader-desc">Provides strategic oversight on behalf of the student membership, ensuring USA operates with accountability, fairness, and in strict accordance with our constitution.</p>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-avatar" style="background: url('lanjesi.jpg') center/cover no-repeat;">
+        <div class="position-badge">Board Member</div>
+      </div>
+      <div class="leader-info">
+        <h3 class="leader-name">Charles Lanjesi</h3>
+        <div class="leader-role">Board Member</div>
+        <p class="leader-desc">Contributes governance oversight and strategic guidance as a Board Member, holding the executive team accountable to the students they were elected to serve.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <div class="center fade-in">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Activities & <span>Programs</span></h2>
+    <div class="gold-rule"></div>
+    <!-- Changed: "student life" → framed as students doing things together, not services delivered to them -->
+    <p class="section-desc">From academic support to community outreach, these are the programs our members organise, participate in, and benefit from together.</p>
+  </div>
+  <div class="activities-grid fade-in" style="margin-top:48px;">
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('motivational talk at schools.jpg');"></div>
+      <div class="activity-content">
+        <h3>Motivational Talks</h3>
+        <p>USA students visit primary and secondary schools across Malawi to inspire younger learners through powerful sessions on education, career planning, and leadership — because we remember what it felt like to need that encouragement.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="activity-content">
+        <h3>Welfare Programs</h3>
+        <p>Student-run initiatives supporting fellow members facing hardship — including peer counselling, emergency assistance, and support networks built on the principle that we look out for one another.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('donations.jpg');"></div>
+      <div class="activity-content">
+        <h3>Donations & Outreach</h3>
+        <p>Our members organise donation drives and community outreach programs to give back to schools, orphanages, and vulnerable communities — because we believe our responsibility extends beyond the campus gate.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="activity-content">
+        <h3>Academic Tutorials</h3>
+        <p>Students helping students. Our peer-led tutorial sessions and study groups mean that those who excel share what they know with those who need it most — because everyone deserves a fair shot at success.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('trip.jpg');"></div>
+      <div class="activity-content">
+        <h3>Travelling Trips</h3>
+        <p>Organised group trips that let our members explore Malawi and beyond together — building friendships, broadening perspectives, and creating shared memories that last long after graduation.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1585647347384-2593bc35786b?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="activity-content">
+        <h3>Movie Nights</h3>
+        <p>Regular movie screenings organised by and for our members — a chance to unwind, laugh, and connect with fellow students in a relaxed, welcoming atmosphere.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="activity-content">
+        <h3>Game Nights</h3>
+        <p>Competitive and fun gaming events — board games, sports, and digital games — that bring students together for teamwork, laughter, and the kind of connection that only happens when you're not studying.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="activity-content">
+        <h3>Dinner Events</h3>
+        <p>Elegant dinners where we celebrate what our members have achieved, strengthen bonds within our student community, and mark the milestones that define our journey together.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('cover photo.jpg');"></div>
+      <div class="activity-content">
+        <h3>Social Gatherings</h3>
+        <p>Casual meet-ups, mixers, and social events where new members feel instantly welcome and existing members deepen the friendships that make university life truly meaningful.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('motivational.jpg');"></div>
+      <div class="activity-content">
+        <h3>Empowerment Campaigns</h3>
+        <p>Leadership workshops, entrepreneurship sessions, mentorship, and gender empowerment campaigns — because we know the next generation of Malawian leaders is sitting in classrooms right now, and we want to help them get ready.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('fundraising.jpg');"></div>
+      <div class="activity-content">
+        <h3>School Outreach</h3>
+        <p>Our members partner with secondary schools to share guidance, mentorship, career advice, and real talk about university life — because we were in their shoes not long ago.</p>
+      </div>
+    </div>
+    <div class="activity-card">
+      <div class="activity-img" style="background-image: url('cover.jpg');"></div>
+      <div class="activity-content">
+        <h3>Community Service</h3>
+        <p>Environmental clean-ups, tree planting, and community development projects run by our members — because being a student at UNIMA comes with the responsibility to make Malawi better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="center fade-in">
+    <div class="section-label">Our Moments</div>
+    <h2 class="section-title" style="color:white;">Event <span>Gallery</span></h2>
+    <div class="gold-rule" style="margin:18px auto 36px;"></div>
+    <!-- Changed: "our events" — clear ownership by students -->
+    <p class="section-desc">Highlights from our events, activities, and outreach programs — moments created by our members. Follow us on Facebook for more photos and videos.</p>
+  </div>
+  <div class="gallery-track fade-in">
+    <!-- Original Set -->
+    <div class="g-item"><div class="g-bg" style="background-image: url('motivational talk at schools.jpg');"></div><div class="g-overlay"><span>Motivational Talks</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600&q=80');"></div><div class="g-overlay"><span>Dinner Events</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('cover.jpg');"></div><div class="g-overlay"><span>Community Service</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('fundraising.jpg');"></div><div class="g-overlay"><span>Fundraising</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('cover photo.jpg');"></div><div class="g-overlay"><span>Student Life</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('trip.jpg');"></div><div class="g-overlay"><span>Travelling Trips</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('motivational.jpg');"></div><div class="g-overlay"><span>Empowerment Campaigns</span></div></div>
+    
+    <!-- Duplicated Set for Infinite Scroll -->
+    <div class="g-item"><div class="g-bg" style="background-image: url('motivational talk at schools.jpg');"></div><div class="g-overlay"><span>Motivational Talks</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600&q=80');"></div><div class="g-overlay"><span>Dinner Events</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('cover.jpg');"></div><div class="g-overlay"><span>Community Service</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('fundraising.jpg');"></div><div class="g-overlay"><span>Fundraising</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('cover photo.jpg');"></div><div class="g-overlay"><span>Student Life</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('trip.jpg');"></div><div class="g-overlay"><span>Travelling Trips</span></div></div>
+    <div class="g-item"><div class="g-bg" style="background-image: url('motivational.jpg');"></div><div class="g-overlay"><span>Empowerment Campaigns</span></div></div>
+  </div>
+  <div style="text-align:center;margin-top:36px;">
+    <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener" class="btn btn-gold">
+      📘 View More on Facebook
+    </a>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="center fade-in">
+    <div class="section-label">Latest Updates</div>
+    <h2 class="section-title">News & <span>Announcements</span></h2>
+    <div class="gold-rule"></div>
+    <!-- Changed: "our latest activities" — student ownership of the news -->
+    <p class="section-desc">Stay up to date with what our members have been doing, what is coming up next, and what matters to the USA student community.</p>
+  </div>
+  <div class="news-grid fade-in" style="margin-top:48px;">
+    <div class="news-card">
+      <div class="news-img" style="background-image: url('motivational.jpg');"></div>
+      <div class="news-body">
+        <div class="news-tag">📣 Outreach</div>
+        <h3>Our Members Hit the Road — Secondary Schools Tour 2025</h3>
+        <!-- Changed: "USA members" as the active agents -->
+        <p>USA students visited several secondary schools around Zomba to deliver inspiring sessions on education, career planning, and leadership to hundreds of young learners who could be our future members.</p>
+        <div class="news-date">📅 Recent Activity</div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="news-body">
+        <div class="news-tag">🎉 Event</div>
+        <h3>Annual Dinner & Awards Night — Celebrating Our Own</h3>
+        <!-- Changed: "our community" instead of formal institutional language -->
+        <p>We came together as a student community to celebrate outstanding achievements, recognise leadership excellence, and honour the contributions of members who go above and beyond for USA.</p>
+        <div class="news-date">📅 Recent Activity</div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img" style="background-image: url('cover.jpg');"></div>
+      <div class="news-body">
+        <div class="news-tag">❤️ Welfare</div>
+        <h3>Student-Led Donation Drive — Giving Back to Our Communities</h3>
+        <!-- Changed: "our members organised" — active student ownership -->
+        <p>Our members organised a donation drive and delivered essential supplies to schools and communities in need — proving that being a student at UNIMA is about more than just your own degree.</p>
+        <div class="news-date">📅 Recent Activity</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener" class="btn btn-gold">
+      See All Updates on Facebook →
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="fade-in" style="max-width:1100px;margin:0 auto;">
+    <div style="margin-bottom:48px;">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Contact <span>USA</span></h2>
+      <div class="gold-rule"></div>
+      <!-- Changed: framed as reaching fellow students, not a formal institution -->
+      <p class="section-desc">Want to join, partner with us, or just find out more? Reach out — we are fellow students, and we are happy to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <h4>Our Email Address</h4>
+            <a href="mailto:usa.gs.mw@gmail.com">usa.gs.mw@gmail.com</a>
+            <p style="color:var(--gray);font-size:.82rem;margin-top:4px;">For membership inquiries, partnerships, sponsorships & general information</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📘</div>
+          <div>
+            <h4>Find Us on Facebook</h4>
+            <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener">UNIMA United Students Association</a>
+            <p style="color:var(--gray);font-size:.82rem;margin-top:4px;">Follow us for events, announcements, photos and updates from our members</p>
+          </div>
+        </div>
+        <div class="contact-item" style="flex-direction:column;gap:14px;">
+          <div>
+            <!-- Changed: "Executive Contacts" → "Student Executive Contacts" — they are students -->
+            <h4 style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;font-family:'Inter',sans-serif;">WhatsApp — Your Student Executives</h4>
+            <p style="font-size:.82rem;color:var(--gray);">Message your elected student leaders directly</p>
+          </div>
+          <div class="wa-grid">
+            <a href="https://wa.me/265" class="wa-btn">
+              <div class="wa-icon">💬</div>
+              <div class="wa-text"><strong>President</strong><small>Phwiza Transfore</small></div>
+            </a>
+            <a href="https://wa.me/265" class="wa-btn">
+              <div class="wa-icon">💬</div>
+              <div class="wa-text"><strong>General Secretary</strong><small>Berlin Mheya</small></div>
+            </a>
+            <a href="https://wa.me/265" class="wa-btn">
+              <div class="wa-icon">💬</div>
+              <div class="wa-text"><strong>Welfare</strong><small>Kingsley Misokwe</small></div>
+            </a>
+            <a href="https://wa.me/265" class="wa-btn">
+              <div class="wa-icon">💬</div>
+              <div class="wa-text"><strong>Finance</strong><small>Judith Sande</small></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-join">
+        <h3>Become a Member</h3>
+        <!-- Changed: entirely rewritten to speak student-to-student, not institution-to-applicant -->
+        <p>Joining USA means becoming part of something we built together. As a member, you get access to our programs, a seat at the table, and a community of fellow students who have your back throughout your time at UNIMA.</p>
+        <p>It does not matter which year or faculty you are in — USA is for every student. Get in touch and one of our team will walk you through how to join.</p>
+        <a href="mailto:usa.gs.mw@gmail.com" class="btn btn-gold" style="margin-bottom:0;">
+          ✉️ Email Us to Join
+        </a>
+        <div class="fb-widget">
+          <div class="fb-icon">f</div>
+          <div>
+            <h4>Follow Our Facebook Page</h4>
+            <p>Stay connected with the USA community — events, updates, and member moments.</p>
+            <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener">Visit Facebook Page →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="crest-footer"><img src="logo.jpg" alt="USA Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;"></div>
+      <!-- Changed: footer tagline now centres student ownership -->
+      <h3>UNIMA United Students Association</h3>
+      <p>A student organisation built by students, run by students, and dedicated to the welfare and growth of every student .</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener" title="Facebook">f</a>
+        <a href="mailto:usa.gs.mw@gmail.com" title="Email">@</a>
+        <a href="https://wa.me/265" title="WhatsApp">W</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About USA</a>
+      <a href="#leadership">Your Leaders</a>
+      <a href="#activities">Activities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Programs</h4>
+      <a href="#activities">Motivational Talks</a>
+      <a href="#activities">Welfare Programs</a>
+      <a href="#activities">Academic Tutorials</a>
+      <a href="#activities">Community Service</a>
+      <a href="#activities">Events & Social</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <address>
+        <a href="mailto:usa.gs.mw@gmail.com">usa.gs.mw@gmail.com</a><br><br>
+        <!-- Changed: "students at" rather than "based at" — we are students, not located there officially -->
+        Students at the University of Malawi<br>
+        zomba, Malawi<br><br>
+        <a href="https://www.facebook.com/share/1GaK3r5RVg/" target="_blank" rel="noopener">Facebook Page →</a>
+      </address>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>UNIMA United Students Association</span>. A student organisation. All rights reserved.</p>
+    <p>Made with <span>♥</span> by students, for students.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth active nav link highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
